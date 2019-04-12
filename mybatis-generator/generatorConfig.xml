@@ -22,7 +22,8 @@
 			userId="SCOTT" password="tiger"> </jdbcConnection> -->
 
 		<!-- sql server -->
-		<jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver" connectionURL="jdbc:sqlserver://localhost:1433; DatabaseName=asm1" userId="sa" password="sa"></jdbcConnection>
+		<jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver" connectionURL="jdbc:sqlserver://localhost:1433; DatabaseName=asm1" 
+		userId="sa" password="sa"></jdbcConnection>
 
 		<!-- 对于生成的pojo所在包 -->
 		<javaModelGenerator targetPackage="com.twf.book.product.domain"

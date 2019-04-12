@@ -56,12 +56,14 @@
 			<optional>true</optional>
 		</dependency>
 		
+		<!-- mysql -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.41</version>
 		</dependency>
 		
+		<!-- sql server -->
 		<dependency>
 			<groupId>com.microsoft.sqlserver</groupId>
 			<artifactId>sqljdbc4</artifactId>
@@ -76,6 +78,7 @@
 			<scope>runtime</scope>
 		</dependency>
 		
+		<!-- oracle -->
 		<dependency>
 		    <groupId>com.oracle</groupId>
 		    <artifactId>ojdbc14</artifactId>
