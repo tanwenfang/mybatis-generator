@@ -4,30 +4,37 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-    <context id="MysqlContext" targetRuntime="MyBatis3Simple" defaultModelType="flat">
-        <property name="beginningDelimiter" value="`"/>
-        <property name="endingDelimiter" value="`"/>
+	<context id="MysqlContext" targetRuntime="MyBatis3Simple"
+		defaultModelType="flat">
+		<property name="beginningDelimiter" value="`" />
+		<property name="endingDelimiter" value="`" />
 
-        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
-            <property name="mappers" value="com.twf.book.product.MyMapper"/>
-        </plugin>
+		<plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+			<property name="mappers" value="com.twf.book.product.MyMapper" />
+		</plugin>
 
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/book-product"
-                        userId="root"
-                        password="root">
-        </jdbcConnection>
-        
-        <!-- 对于生成的pojo所在包 -->
-        <javaModelGenerator targetPackage="com.twf.book.product.domain" targetProject="src/main/java"/>
+		<!-- mysql -->
+		<!-- <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/book-product" 
+			userId="root" password="root"> </jdbcConnection> -->
+
+		<!-- Oracle -->
+		<!-- <jdbcConnection driverClass="oracle.jdbc.OracleDriver" connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:orcl" 
+			userId="SCOTT" password="tiger"> </jdbcConnection> -->
+
+		<!-- sql server -->
+		<jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver" connectionURL="jdbc:sqlserver://localhost:1433; DatabaseName=asm1" userId="sa" password="sa"></jdbcConnection>
+
+		<!-- 对于生成的pojo所在包 -->
+		<javaModelGenerator targetPackage="com.twf.book.product.domain"
+			targetProject="src/main/java" />
 
 		<!-- 对于生成的mapper所在目录 -->
-        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
+		<sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources" />
 
 		<!-- 配置mapper对应的java映射 -->
-        <javaClientGenerator targetPackage="com.twf.book.product.persistence" targetProject="src/main/java"
-                             type="XMLMAPPER"/>
-		<table tableName="product"></table>
-		 
-    </context>
+		<javaClientGenerator targetPackage="com.twf.book.product.persistence"
+			targetProject="src/main/java" type="XMLMAPPER" />
+		<table tableName="tblDevice"></table>
+
+	</context>
 </generatorConfiguration>
